@@ -1,2 +1,212 @@
 # Proyecto-Programaci-n-1
-Semestre Agosto - Diciembre 2026
+Semestre Agosto - Diciembre 2026 
+, por: Alejandro Burgoin A01714726
+
+# GainTrack
+
+## Descripción
+
+**GainTrack** es un programa desarrollado en Python que permite a los usuarios registrar, consultar y analizar sus entrenamientos para llevar un seguimiento de su rendimiento físico y observar su progreso a través del tiempo.
+
+El proyecto está pensado como una herramienta sencilla que transforma los datos de los entrenamientos en información útil para que el usuario pueda conocer mejor su desempeño y darle seguimiento a sus objetivos.
+
+----------
+
+## Contexto
+
+Actualmente, muchas personas realizan ejercicio de manera constante, pero no siempre llevan un registro organizado de sus entrenamientos. Datos como el peso utilizado, las series, las repeticiones o la frecuencia de entrenamiento pueden perderse o simplemente no utilizarse para conocer el progreso.
+
+A partir de esta situación surge **GainTrack**, una propuesta que busca facilitar el registro de los entrenamientos y utilizar la información recopilada para obtener datos que ayuden al usuario a conocer su rendimiento.
+
+El proyecto comenzará como un programa sencillo que funciona desde la terminal y que irá creciendo conforme se incorporen nuevos conocimientos de programación durante el semestre.
+
+----------
+
+## Objetivo
+
+Desarrollar una herramienta sencilla en Python que permita a los usuarios registrar sus entrenamientos y utilizar sus propios datos para consultar su rendimiento, identificar su progreso y, posteriormente, establecer metas de entrenamiento.
+
+----------
+
+## Alcance inicial
+
+La primera versión de **GainTrack** contará con las siguientes funciones:
+
+-   Registrar un entrenamiento.
+    
+-   Ingresar el nombre del ejercicio.
+    
+-   Registrar el peso utilizado.
+    
+-   Registrar el número de series.
+    
+-   Registrar el número de repeticiones.
+    
+-   Consultar los entrenamientos registrados.
+    
+-   Calcular el volumen de entrenamiento.
+    
+-   Mostrar un menú para navegar por las diferentes opciones.
+    
+-   Validar datos y opciones ingresadas por el usuario.
+    
+
+El cálculo inicial del volumen de entrenamiento será:
+
+**Volumen = peso × series × repeticiones**
+
+----------
+
+## Funcionamiento general
+
+El funcionamiento principal del programa seguirá el siguiente proceso:
+
+```text
+Inicio
+  ↓
+Mostrar menú principal
+  ↓
+Seleccionar una opción
+  ↓
+┌─────────────────────────────┐
+│ Registrar entrenamiento     │
+│ Consultar entrenamiento     │
+│ Calcular volumen            │
+│ Salir                       │
+└─────────────────────────────┘
+  ↓
+Procesar la opción seleccionada
+  ↓
+Mostrar resultado
+  ↓
+Regresar al menú
+  ↓
+¿Salir?
+  ├── No → Continuar
+  └── Sí → Fin
+
+```
+
+----------
+
+## Algoritmo
+
+**Inicio**
+
+1.  Mostrar el nombre del programa **GainTrack**.
+    
+2.  Mostrar un menú con las opciones:
+    
+    -   Registrar entrenamiento.
+        
+    -   Consultar entrenamiento.
+        
+    -   Calcular volumen de entrenamiento.
+        
+    -   Salir.
+        
+3.  Pedir al usuario que seleccione una opción.
+    
+4.  Si selecciona **Registrar entrenamiento**:
+    
+    -   Pedir el nombre del ejercicio.
+        
+    -   Pedir el peso utilizado.
+        
+    -   Pedir el número de series.
+        
+    -   Pedir el número de repeticiones.
+        
+    -   Guardar los datos del entrenamiento.
+        
+5.  Si selecciona **Consultar entrenamiento**:
+    
+    -   Mostrar los entrenamientos registrados.
+        
+6.  Si selecciona **Calcular volumen**:
+    
+    -   Obtener el peso, número de series y número de repeticiones.
+        
+    -   Calcular el volumen de entrenamiento.
+        
+    -   Mostrar el resultado.
+        
+7.  Si selecciona **Salir**:
+    
+    -   Terminar el programa.
+        
+8.  Si selecciona una opción incorrecta:
+    
+    -   Mostrar un mensaje indicando que la opción no es válida.
+        
+    -   Regresar al menú principal.
+        
+9.  Repetir el menú hasta que el usuario seleccione la opción **Salir**.
+    
+
+**Fin**
+
+----------
+
+## Escalabilidad
+
+Una de las características principales de **GainTrack** será que el proyecto podrá crecer conforme se adquieran nuevos conocimientos de programación.
+
+Algunas funcionalidades que podrían incorporarse posteriormente son:
+
+-   Historial completo de entrenamientos.
+    
+-   Búsqueda de ejercicios.
+    
+-   Estadísticas de rendimiento.
+    
+-   Comparación del progreso entre diferentes fechas.
+    
+-   Registro de diferentes tipos de entrenamiento.
+    
+-   Establecimiento de metas.
+    
+-   Recomendaciones basadas en los datos registrados.
+    
+-   Almacenamiento permanente de la información.
+    
+-   Análisis más avanzado del rendimiento.
+    
+
+Estas funcionalidades permitirán que el proyecto evolucione de un programa básico de registro a una herramienta más completa para el seguimiento del rendimiento físico.
+
+----------
+
+## Estructura del proyecto
+
+```text
+GainTrack/
+│
+├── README.md
+│
+└── gaintrack.py
+```
+
+### `README.md`
+Contiene la documentación y descripción general del proyecto.
+
+### `gaintrack.py`
+ será donde posteriormente hagamos el programa.
+
+## Tecnologías
+
+-   **Python 3.13**
+-   **GitHub**
+    
+
+----------
+
+##  Proyección del proyecto
+
+La intención de **GainTrack** es comenzar con funcionalidades básicas y aumentar progresivamente su capacidad conforme se aprendan nuevos conceptos de programación.
+
+El proyecto seguirá una idea principal:
+
+> **Registrar → Organizar → Analizar → Comprender el progreso**
+
+De esta manera, cada nueva funcionalidad podrá aportar mayor utilidad al usuario sin perder la idea original del proyecto.
