@@ -92,48 +92,50 @@ Regresar al menú
 ## Algoritmo
 
 ENTRADAS:
-- Nombre del ejercicio.
-- Peso utilizado en kilogramos.
-- Número de series.
-- Número de repeticiones.
-- Opción seleccionada en el menú.
-
-1. INICIO
-
-2. Mostrar el nombre del programa GainTrack.
-
-3. Mostrar un menú con las opciones:
-   2.1. Registrar entrenamiento.
-   2.2. Consultar entrenamiento.
-   2.3. Calcular volumen de entrenamiento.
-   2.4. Salir.
-
-4. Pedir al usuario que seleccione una opción.
-
-5. Si selecciona Registrar entrenamiento:
-   4.1. Pedir el nombre del ejercicio.
-   4.2. Pedir el peso utilizado.
-   4.3. Pedir el número de series.
-   4.4. Pedir el número de repeticiones.
-   4.5. Guardar los datos del entrenamiento.
-
-6. Si selecciona Consultar entrenamiento:
-   5.1. Mostrar los entrenamientos registrados.
-
-7. Si selecciona Calcular volumen:
-   6.1. Obtener el peso, número de series y número de repeticiones.
-   6.2. Calcular el volumen de entrenamiento.
-   6.3. Mostrar el resultado.
-
-8. Si selecciona Salir:
-   7.1. Terminar el programa.
-
-9. Si selecciona una opción incorrecta:
-   8.1. Mostrar un mensaje indicando que la opción no es válida.
-   8.2. Regresar al menú principal.
-
-10. Volver al paso 2.
-11. FIN
+ - Nombre del ejercicio.
+ - Peso utilizado en kilogramos.
+ - Número de series.
+ - Número de repeticiones.
+ - Opción seleccionada en el menú.
+ 
+ PROCESOS:
+      
+      1.INICIO
+      
+      2. Mostrar el nombre del programa GainTrack.
+      
+      3. Mostrar un menú con las opciones:
+         3.1. Registrar entrenamiento.
+         3.2. Consultar entrenamiento.
+         3.3. Calcular volumen de entrenamiento.
+         3.4. Salir.
+      
+      4. Pedir al usuario que seleccione una opción.
+      
+      5. Si selecciona Registrar entrenamiento:
+         5.1. Pedir el nombre del ejercicio.
+         5.2. Pedir el peso utilizado.
+         5.3. Pedir el número de series.
+         5.4. Pedir el número de repeticiones.
+         5.5. Guardar los datos del entrenamiento.
+      
+      6. Si selecciona Consultar entrenamiento:
+         6.1. Mostrar los entrenamientos registrados.
+      
+      7. Si selecciona Calcular volumen:
+         7.1. Obtener el peso, número de series y número de repeticiones.
+         7.2. Calcular el volumen de entrenamiento.
+         7.3. Mostrar el resultado.
+      
+      8. Si selecciona Salir:
+         8.1. Terminar el programa.
+      
+      9. Si selecciona una opción incorrecta:
+         9.1. Mostrar un mensaje indicando que la opción no es válida.
+         9.2. Regresar al menú principal.
+      
+      10. Volver al paso 2.
+      11. FIN
 
 SALIDAS:
 - Datos del entrenamiento registrado.
@@ -141,7 +143,6 @@ SALIDAS:
 - Volumen de entrenamiento calculado.
 - Mensaje de opción no válida.
 - Mensaje de salida del programa.
-
 ----------
 
 ## Escalabilidad
