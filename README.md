@@ -1,4 +1,4 @@
-# Proyecto-Programaci-n-1
+# Proyecto-Programacion-1
 Semestre Agosto - Diciembre 2026 
 , por: Alejandro Burgoin A01714726
 
