@@ -57,38 +57,6 @@ El cálculo inicial del volumen de entrenamiento será:
 
 ----------
 
-## Funcionamiento general
-
-El funcionamiento principal del programa seguirá el siguiente proceso:
-
-```text
-Inicio
-  ↓
-Mostrar menú principal
-  ↓
-Seleccionar una opción
-  ↓
-┌─────────────────────────────┐
-│ Registrar entrenamiento     │
-│ Consultar entrenamiento     │
-│ Calcular volumen            │
-│ Salir                       │
-└─────────────────────────────┘
-  ↓
-Procesar la opción seleccionada
-  ↓
-Mostrar resultado
-  ↓
-Regresar al menú
-  ↓
-¿Salir?
-  ├── No → Continuar
-  └── Sí → Fin
-
-```
-
-----------
-
 ## Algoritmo
 
 ENTRADAS:
