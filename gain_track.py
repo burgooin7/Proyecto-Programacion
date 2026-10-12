@@ -1,12 +1,13 @@
 def registrar_entrenamiento():
-    # Solicita al usuario que ingrese los detalles del entrenamiento
-    ejercicio = input("nombre del ejercicio: ")
-    peso = float(input("peso utilizado (kg): "))
-    series = int(input("numero de series: "))
-    repeticiones = int(input("repeticiones por serie: "))
+    # Solicita al usuario los detalles del entrenamiento
+    ejercicio = input("Nombre del ejercicio: ")
+    peso = float(input("Peso utilizado (kg): "))
+    series = int(input("Número de series: "))
+    repeticiones = int(input("Repeticiones por serie: "))
 
-    # Devuelve los datos para que puedan ser utilizados en otras funciones
+    # Devuelve los datos para utilizarlos en otras funciones
     return ejercicio, peso, series, repeticiones
+
 
 def calcular_volumen(peso, series, repeticiones):
     # Calcula el volumen total del entrenamiento
@@ -15,70 +16,82 @@ def calcular_volumen(peso, series, repeticiones):
     # Devuelve el volumen calculado
     return volumen
 
+
 def mostrar_resultados(ejercicio, peso, series, repeticiones):
-    # Calcula el volumen del entrenamiento
+    # Calcula el volumen total y el promedio por serie
     volumen = calcular_volumen(peso, series, repeticiones)
-    # Calcula el volumen promedio realizado en cada serie
     promedio_por_serie = volumen / series
 
     # Muestra los resultados del entrenamiento
     print("\n===== Resultados del Entrenamiento =====")
     print(f"Ejercicio: {ejercicio}")
     print(f"Peso utilizado: {peso} kg")
-    print(f"Numero de series: {series}")
+    print(f"Número de series: {series}")
     print(f"Repeticiones por serie: {repeticiones}")
     print(f"Volumen total del entrenamiento: {volumen} kg")
     print(f"Volumen promedio por serie: {promedio_por_serie:.2f} kg")
 
+
 def main():
-    # Ejecuta el programa principal
+    # Muestra el nombre del programa
     print("==============================")
     print("          GainTrack          ")
     print("==============================")
-    # Muestra las opciones disponibles para el usuario
-    print("\n¿Que deseas hacer?")
-    print("1. Registrar Entrenamiento")
-    print("2. Calcular Volumen de Entrenamiento")
+
+    # Muestra las opciones disponibles en el menú
+    print("\n¿Qué deseas hacer?")
+    print("1. Registrar entrenamiento")
+    print("2. Calcular volumen de entrenamiento")
     print("3. Salir")
 
-    # Guarda la opción que seleccionó el usuario
-    opcion = int(input("Salecciona una opcion: "))
+    # Guarda la opción seleccionada por el usuario
+    opcion = int(input("Selecciona una opción: "))
 
-    # Si el usuario selecciona 1, registra un nuevo entrenamiento
+    # Si el usuario selecciona 1, registra un entrenamiento
     if opcion == 1:
         ejercicio, peso, series, repeticiones = registrar_entrenamiento()
         mostrar_resultados(ejercicio, peso, series, repeticiones)
 
+        # Indica que el programa debe continuar
         return True
 
     # Si el usuario selecciona 2, calcula el volumen directamente
     elif opcion == 2:
+        # Solicita los datos necesarios para calcular el volumen
         peso = float(input("Peso utilizado (kg): "))
-        series = int(input("Numero de series realizadas: "))
+        series = int(input("Número de series realizadas: "))
         repeticiones = int(input("Repeticiones por serie: "))
-        calcular_volumen(peso, series, repeticiones)
-        volumen = calcular_volumen(peso, series, repeticiones)
-        print(f"\nEl volumen de tu entreno es:{volumen} kg ")
 
+        # Calcula el volumen y guarda el resultado
+        volumen = calcular_volumen(peso, series, repeticiones)
+
+        # Muestra el volumen calculado
+        print(f"\nEl volumen de tu entrenamiento es: {volumen} kg")
+
+        # Indica que el programa debe continuar
         return True
 
     # Si el usuario selecciona 3, termina el programa
     elif opcion == 3:
         print("\nGracias por usar GainTrack")
 
+        # Indica que el programa debe detenerse
         return False
-        
-    # Si el usuario escribe una opción diferente a 1, 2 o 3
-    else: 
-        print("\nopcion no valida")
 
+    # Si el usuario selecciona una opción diferente a 1, 2 o 3
+    else:
+        print("\nOpción no válida")
+
+        # Permite volver al menú principal
         return True
-    
-# Repite el menu para que el usuario pueda realizar varias acciones
-# hasta que seleccione la opcion de salir
-while True : 
 
-    # Si el usuario selecciona salir, termina el ciclo
+
+# Repite el menú para que el usuario pueda realizar varias acciones
+# hasta que seleccione la opción de salir
+while True:
     continuar = main()
+
+    # Si main() devuelve False, termina el ciclo
     if not continuar:
         break
+    
