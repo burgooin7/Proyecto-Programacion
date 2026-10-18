@@ -1,9 +1,19 @@
+# Guarda los entrenamientos registrados durante la ejecucion
+entrenamientos = []
+
+
 def registrar_entrenamiento():
     # Solicita al usuario los detalles del entrenamiento
     ejercicio = input("Nombre del ejercicio: ")
     peso = float(input("Peso utilizado (kg): "))
-    series = int(input("Número de series: "))
+    series = int(input("Numero de series: "))
     repeticiones = int(input("Repeticiones por serie: "))
+
+    # Guarda los datos del entrenamiento en una lista
+    entrenamiento = [ejercicio, peso, series, repeticiones]
+
+    # Agrega el entrenamiento al historial
+    entrenamientos.append(entrenamiento)
 
     # Devuelve los datos para utilizarlos en otras funciones
     return ejercicio, peso, series, repeticiones
@@ -26,26 +36,57 @@ def mostrar_resultados(ejercicio, peso, series, repeticiones):
     print("\n===== Resultados del Entrenamiento =====")
     print(f"Ejercicio: {ejercicio}")
     print(f"Peso utilizado: {peso} kg")
-    print(f"Número de series: {series}")
+    print(f"Numero de series: {series}")
     print(f"Repeticiones por serie: {repeticiones}")
     print(f"Volumen total del entrenamiento: {volumen} kg")
     print(f"Volumen promedio por serie: {promedio_por_serie:.2f} kg")
 
 
+def consultar_entrenamientos():
+    # Comprueba si existen entrenamientos registrados
+    if len(entrenamientos) == 0:
+        print("\nTodavia no hay entrenamientos registrados.")
+
+    else:
+        # Recorre la lista para mostrar cada entrenamiento
+        print("\n===== Historial de Entrenamientos =====")
+
+        for i in range(len(entrenamientos)):
+            # Obtiene los datos del entrenamiento actual
+            entrenamiento = entrenamientos[i]
+
+            ejercicio = entrenamiento[0]
+            peso = entrenamiento[1]
+            series = entrenamiento[2]
+            repeticiones = entrenamiento[3]
+
+            # Calcula el volumen del entrenamiento actual
+            volumen = calcular_volumen(peso, series, repeticiones)
+
+            # Muestra los datos del entrenamiento
+            print(f"\nEntrenamiento {i + 1}")
+            print(f"Ejercicio: {ejercicio}")
+            print(f"Peso utilizado: {peso} kg")
+            print(f"Numero de series: {series}")
+            print(f"Repeticiones por serie: {repeticiones}")
+            print(f"Volumen total: {volumen} kg")
+
+
 def main():
     # Muestra el nombre del programa
-    print("==============================")
-    print("          GainTrack          ")
+    print("\n==============================")
+    print("          GainTrack")
     print("==============================")
 
-    # Muestra las opciones disponibles en el menú
-    print("\n¿Qué deseas hacer?")
+    # Muestra las opciones disponibles en el menu
+    print("\nQue deseas hacer?")
     print("1. Registrar entrenamiento")
     print("2. Calcular volumen de entrenamiento")
-    print("3. Salir")
+    print("3. Consultar entrenamientos")
+    print("4. Salir")
 
-    # Guarda la opción seleccionada por el usuario
-    opcion = int(input("Selecciona una opción: "))
+    # Guarda la opcion seleccionada por el usuario
+    opcion = int(input("Selecciona una opcion: "))
 
     # Si el usuario selecciona 1, registra un entrenamiento
     if opcion == 1:
@@ -59,37 +100,45 @@ def main():
     elif opcion == 2:
         # Solicita los datos necesarios para calcular el volumen
         peso = float(input("Peso utilizado (kg): "))
-        series = int(input("Número de series realizadas: "))
+        series = int(input("Numero de series realizadas: "))
         repeticiones = int(input("Repeticiones por serie: "))
 
-        # Calcula el volumen y guarda el resultado
+        # Calcula y muestra el volumen
         volumen = calcular_volumen(peso, series, repeticiones)
-
-        # Muestra el volumen calculado
         print(f"\nEl volumen de tu entrenamiento es: {volumen} kg")
 
         # Indica que el programa debe continuar
         return True
 
-    # Si el usuario selecciona 3, termina el programa
+    # Si el usuario selecciona 3, muestra el historial
     elif opcion == 3:
-        print("\nGracias por usar GainTrack")
+        consultar_entrenamientos()
+
+        # Indica que el programa debe continuar
+        return True
+
+    # Si el usuario selecciona 4, termina el programa
+    elif opcion == 4:
+        print("\n¡Gracias por usar GainTrack!")
 
         # Indica que el programa debe detenerse
         return False
 
-    # Si el usuario selecciona una opción diferente a 1, 2 o 3
+    # Si el usuario selecciona una opcion diferente a las disponibles
     else:
-        print("\nOpción no válida")
+        print("\nOpcion no valida")
 
-        # Permite volver al menú principal
+        # Permite regresar al menu principal
         return True
 
 
-# Repite el menú para que el usuario pueda realizar varias acciones
-# hasta que seleccione la opción de salir
+# Repite el menu hasta que el usuario decida salir
 while True:
     continuar = main()
+
+    # Termina el ciclo cuando main() devuelve False
+    if not continuar:
+        break
 
     # Si main() devuelve False, termina el ciclo
     if not continuar:
