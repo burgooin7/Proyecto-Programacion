@@ -12,7 +12,7 @@ def registrar_entrenamiento():
     # Guarda los datos del entrenamiento en una lista
     entrenamiento = [ejercicio, peso, series, repeticiones]
 
-    # Agrega el entrenamiento al historial
+    # Agrega la lista del entrenamiento a la lista principal
     entrenamientos.append(entrenamiento)
 
     # Devuelve los datos para utilizarlos en otras funciones
@@ -48,13 +48,16 @@ def consultar_entrenamientos():
         print("\nTodavia no hay entrenamientos registrados.")
 
     else:
-        # Recorre la lista para mostrar cada entrenamiento
+        # Muestra el historial de entrenamientos
         print("\n===== Historial de Entrenamientos =====")
 
+        # Recorre las filas de la lista principal
         for i in range(len(entrenamientos)):
-            # Obtiene los datos del entrenamiento actual
+
+            # Obtiene la lista correspondiente a cada entrenamiento
             entrenamiento = entrenamientos[i]
 
+            # Accede a los datos mediante sus posiciones
             ejercicio = entrenamiento[0]
             peso = entrenamiento[1]
             series = entrenamiento[2]
@@ -63,7 +66,7 @@ def consultar_entrenamientos():
             # Calcula el volumen del entrenamiento actual
             volumen = calcular_volumen(peso, series, repeticiones)
 
-            # Muestra los datos del entrenamiento
+            # Muestra los datos de cada fila de la lista
             print(f"\nEntrenamiento {i + 1}")
             print(f"Ejercicio: {ejercicio}")
             print(f"Peso utilizado: {peso} kg")
@@ -119,7 +122,7 @@ def main():
 
     # Si el usuario selecciona 4, termina el programa
     elif opcion == 4:
-        print("\n¡Gracias por usar GainTrack!")
+        print("\nGracias por usar GainTrack!")
 
         # Indica que el programa debe detenerse
         return False
