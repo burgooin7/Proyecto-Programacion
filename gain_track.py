@@ -1,3 +1,4 @@
+
 # Guarda los entrenamientos registrados durante la ejecucion
 entrenamientos = []
 
@@ -48,31 +49,51 @@ def consultar_entrenamientos():
         print("\nTodavia no hay entrenamientos registrados.")
 
     else:
-        # Muestra el historial de entrenamientos
-        print("\n===== Historial de Entrenamientos =====")
+        # Permite elegir como mostrar los nombres de los ejercicios
+        print("\nComo deseas mostrar los nombres?")
+        print("1. Texto original")
+        print("2. Mayusculas")
+        print("3. Minusculas")
 
-        # Recorre las filas de la lista principal
-        for i in range(len(entrenamientos)):
+        formato = int(input("Selecciona una opcion: "))
 
-            # Obtiene la lista correspondiente a cada entrenamiento
-            entrenamiento = entrenamientos[i]
+        # Comprueba que la opcion sea valida
+        if formato == 1 or formato == 2 or formato == 3:
 
-            # Accede a los datos mediante sus posiciones
-            ejercicio = entrenamiento[0]
-            peso = entrenamiento[1]
-            series = entrenamiento[2]
-            repeticiones = entrenamiento[3]
+            # Muestra el historial de entrenamientos
+            print("\n===== Historial de Entrenamientos =====")
 
-            # Calcula el volumen del entrenamiento actual
-            volumen = calcular_volumen(peso, series, repeticiones)
+            # Recorre las filas de la lista principal
+            for i in range(len(entrenamientos)):
 
-            # Muestra los datos de cada fila de la lista
-            print(f"\nEntrenamiento {i + 1}")
-            print(f"Ejercicio: {ejercicio}")
-            print(f"Peso utilizado: {peso} kg")
-            print(f"Numero de series: {series}")
-            print(f"Repeticiones por serie: {repeticiones}")
-            print(f"Volumen total: {volumen} kg")
+                # Obtiene la lista correspondiente a cada entrenamiento
+                entrenamiento = entrenamientos[i]
+
+                # Accede a los datos mediante sus posiciones
+                ejercicio = entrenamiento[0]
+                peso = entrenamiento[1]
+                series = entrenamiento[2]
+                repeticiones = entrenamiento[3]
+
+                # Cambia el formato del nombre del ejercicio
+                if formato == 2:
+                    ejercicio = ejercicio.upper()
+                elif formato == 3:
+                    ejercicio = ejercicio.lower()
+
+                # Calcula el volumen del entrenamiento actual
+                volumen = calcular_volumen(peso, series, repeticiones)
+
+                # Muestra los datos de cada entrenamiento
+                print(f"\nEntrenamiento {i + 1}")
+                print(f"Ejercicio: {ejercicio}")
+                print(f"Peso utilizado: {peso} kg")
+                print(f"Numero de series: {series}")
+                print(f"Repeticiones por serie: {repeticiones}")
+                print(f"Volumen total: {volumen} kg")
+
+        else:
+            print("\nOpcion no valida.")
 
 
 def main():
@@ -142,8 +163,5 @@ while True:
     # Termina el ciclo cuando main() devuelve False
     if not continuar:
         break
-
-    # Si main() devuelve False, termina el ciclo
-    if not continuar:
-        break
+        
     
