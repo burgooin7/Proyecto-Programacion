@@ -1,6 +1,8 @@
-
 # Guarda los entrenamientos registrados durante la ejecucion
 entrenamientos = []
+
+# Archivo donde se guardan los entrenamientos
+nombre_archivo = "entrenamientos.txt"
 
 
 def registrar_entrenamiento():
@@ -47,7 +49,6 @@ def consultar_entrenamientos():
     # Comprueba si existen entrenamientos registrados
     if len(entrenamientos) == 0:
         print("\nTodavia no hay entrenamientos registrados.")
-
     else:
         # Permite elegir como mostrar los nombres de los ejercicios
         print("\nComo deseas mostrar los nombres?")
@@ -59,13 +60,11 @@ def consultar_entrenamientos():
 
         # Comprueba que la opcion sea valida
         if formato == 1 or formato == 2 or formato == 3:
-
             # Muestra el historial de entrenamientos
             print("\n===== Historial de Entrenamientos =====")
 
             # Recorre las filas de la lista principal
             for i in range(len(entrenamientos)):
-
                 # Obtiene la lista correspondiente a cada entrenamiento
                 entrenamiento = entrenamientos[i]
 
@@ -91,9 +90,48 @@ def consultar_entrenamientos():
                 print(f"Numero de series: {series}")
                 print(f"Repeticiones por serie: {repeticiones}")
                 print(f"Volumen total: {volumen} kg")
-
         else:
             print("\nOpcion no valida.")
+
+
+def guardar_entrenamientos():
+    # Guarda todos los entrenamientos en el archivo de texto,
+    # uno por linea: ejercicio,peso,series,repeticiones
+    archivo = open(nombre_archivo, "w")
+
+    for i in range(len(entrenamientos)):
+        entrenamiento = entrenamientos[i]
+        ejercicio = entrenamiento[0]
+        peso = entrenamiento[1]
+        series = entrenamiento[2]
+        repeticiones = entrenamiento[3]
+        archivo.write(f"{ejercicio},{peso},{series},{repeticiones}\n")
+
+    archivo.close()
+    print(f"\nSe guardaron {len(entrenamientos)} entrenamientos en {nombre_archivo}.")
+
+
+def cargar_entrenamientos():
+    # Lee los entrenamientos guardados y los agrega a la lista
+    archivo = open(nombre_archivo, "r")
+    cargados = 0
+
+    for linea in archivo:
+        linea = linea.strip()
+        if linea == "":
+            continue
+        partes = linea.split(",")
+        ejercicio = partes[0]
+        peso = float(partes[1])
+        series = int(partes[2])
+        repeticiones = int(partes[3])
+        entrenamiento = [ejercicio, peso, series, repeticiones]
+        entrenamientos.append(entrenamiento)
+        cargados = cargados + 1
+
+    archivo.close()
+    if cargados > 0:
+        print(f"\nSe cargaron {cargados} entrenamientos desde el archivo.")
 
 
 def main():
@@ -107,7 +145,8 @@ def main():
     print("1. Registrar entrenamiento")
     print("2. Calcular volumen de entrenamiento")
     print("3. Consultar entrenamientos")
-    print("4. Salir")
+    print("4. Guardar entrenamientos en archivo")
+    print("5. Salir")
 
     # Guarda la opcion seleccionada por el usuario
     opcion = int(input("Selecciona una opcion: "))
@@ -141,8 +180,15 @@ def main():
         # Indica que el programa debe continuar
         return True
 
-    # Si el usuario selecciona 4, termina el programa
+    # Si el usuario selecciona 4, guarda los entrenamientos en el archivo
     elif opcion == 4:
+        guardar_entrenamientos()
+
+        # Indica que el programa debe continuar
+        return True
+
+    # Si el usuario selecciona 5, termina el programa
+    elif opcion == 5:
         print("\nGracias por usar GainTrack!")
 
         # Indica que el programa debe detenerse
@@ -156,6 +202,9 @@ def main():
         return True
 
 
+# Carga los entrenamientos guardados antes de mostrar el menu
+cargar_entrenamientos()
+
 # Repite el menu hasta que el usuario decida salir
 while True:
     continuar = main()
@@ -163,5 +212,3 @@ while True:
     # Termina el ciclo cuando main() devuelve False
     if not continuar:
         break
-        
-    
