@@ -1,0 +1,32 @@
+SOLICITUD DE REEVALUACION - GAINTRACK
+
+Alejandro Burgoin Vargas - A01714726
+Fundamentos de programacion - TC1038.605
+27 de noviembre de 2026
+
+En los commits se puede ver que el Avance 7 se entrego en tiempo y forma.
+
+Solicito la reevaluacion de los dos comportamientos con 0 en mi caratula:
+
+
+1. AVANCE 1 - PLANTEA UNA SITUACION PROBLEMA
+
+Actual: 0 - Solicito: 1
+
+La situacion problema si esta planteada en el README.md, en Descripcion, Contexto y Objetivo: muchas personas hacen ejercicio pero no llevan un registro organizado de sus entrenamientos, y GainTrack surge para registrarlos y analizar su progreso. Esta version ya incluye la correccion.
+
+Ademas, el comentario de la caratula dice: "Buena idea y tamano del proyecto, el contexto es claro y con buen nivel de detalle".
+
+
+2. AVANCE 7 - GUARDAR LOS DATOS (MATRICES)
+
+Actual: 0 - Solicito: 1
+
+Si se entrego en tiempo: en Canvas, Avance 7 se entrego el 25 de octubre de 2026 a las 20:06, y la fecha limite era ese mismo dia a las 23:59. El commit quedo a las 19:59.
+
+Si se usan matrices: en gain_track.py, entrenamientos es una lista de listas. Cada entrenamiento es [ejercicio, peso, series, repeticiones] y se consulta por su posicion, por ejemplo entrenamiento[0], entrenamiento[1], entrenamiento[2] y entrenamiento[3].
+
+
+Gracias por la revision.
+
+Alejandro Burgoin Vargas - A01714726
